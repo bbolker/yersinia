@@ -85,6 +85,9 @@ test_that("didelot scenario keeps Cairo demography switches explicit", {
   expect_equal(params$d_r, 0)
   expect_equal(params$r_h, params$d_h)
   expect_equal(params$p_obs, 0.8)
+  ## gamma_H = 1/8 per day (Didelot et al. 2017, section 3.2; their
+  ## Table 2's 1/18 is a typo)
+  expect_equal(params$m_h, 1/8)
 })
 
 test_that("all scenarios load successfully", {

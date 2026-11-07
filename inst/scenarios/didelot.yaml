@@ -22,7 +22,7 @@ d_r: 0.0            # Natural death rate of rats (per day)
 # Disease transmission parameters (daily rates, from posterior means)
 beta_r: 0.77        # Transmission rate from carcasses to rats (per day)
 rho: 2.63           # Rat carcass infectivity range (dimensionless)
-m_r: 0.0556         # Plague death rate of rats (per day, = 1/18; Didelot Table 1 fixed)
+m_r: 0.0556         # Plague death rate of rats (per day, = 1/18; Didelot Table 2 fixed, taken from Keeling & Gilligan)
 g_r: 0.0            # Probability rat survives infection (0 in Didelot - all infected rats die)
 delta_R: 0.267      # Carcass decay rate (per day, ~3.7 day infectious period)
 
@@ -32,7 +32,9 @@ r_h: 0.0000898      # Human birth rate (per day), set equal to d_h as in Didelot
 d_h: 0.0000898      # Non-plague human death rate (per day, ~30.5 year life expectancy)
 beta_h: 0.0145      # Transmission rate from carcasses to humans (per day)
 beta_I: 0.0215      # Human-to-human transmission rate (per day)
-m_h: 0.0556         # Plague resolution rate in humans (per day, = 1/18; Didelot Table 1 fixed)
+m_h: 0.125          # Plague resolution rate in humans (per day, = 1/8; fixed, Didelot section 3.2)
+                    # Didelot Table 2 says 1/18, but the text says gamma_H = 1/8, and
+                    # their human R0 = beta_I/gamma_H = 0.0215/0.172 also implies 1/8.
 g_h: 0.1            # Probability human survives plague
 p_obs: 0.8          # Didelot assumed 80% of human deaths were reported
 
