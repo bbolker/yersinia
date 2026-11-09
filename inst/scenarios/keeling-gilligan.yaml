@@ -8,7 +8,7 @@ name: "keeling-gilligan"
 description: "Parameters from Keeling & Gilligan (2000), adapted to carcass formulation"
 source: "Keeling, M. J., & Gilligan, C. A. (2000)"
 reference: "Metapopulation dynamics of bubonic plague. Nature, 407(6806), 903-906"
-doi: "10.1038/35038564"
+doi: "10.1038/35038073"
 time_unit: "day"
 
 # Rat population parameters (converted from per year)
@@ -20,7 +20,8 @@ d_r: 0.000548    # Natural death rate of rats (per day, original: 0.2/year)
 # Disease transmission parameters
 #
 # Derivation: K&G's R₀ for the rat-flea-carcass loop at the disease-free
-# equilibrium (eq. on p. 2226) is
+# equilibrium (Keeling & Gilligan 2000, Nature, Fig. 3 legend, p. 904; model
+# equations in Methods, p. 905) is
 #     R₀_KG = β_R × K_F × (1 - exp(-a · K_R)) / d_F = 4.7 × 6.57 × ~1 / 10 ≈ 3.09.
 # Our carcass formulation (CLAUDE.md) gives
 #     R₀_carcass = β_r × (1 - g_r) × (1 - exp(-ρ)) / δ_R.
@@ -53,9 +54,10 @@ mu_r: 0.0000822  # Rat movement rate (per day, original: 0.03/year)
 # Notes
 notes: |
   These are adapted from the seminal Keeling & Gilligan (2000)
-  Nature paper. The original model used explicit flea dynamics
-  (states F and N with parameters a, K_f, d_f, r_f). These have
-  been mapped to the carcass-based formulation.
+  Nature paper (parameter values from its Table 1). The original
+  model used explicit flea dynamics (states F and N with parameters
+  a, K_f, d_f, r_f). These have been mapped to the carcass-based
+  formulation.
 
   Original flea parameters (for reference):
     a = 0.004    (flea search efficiency)
